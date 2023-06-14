@@ -24,7 +24,8 @@ const createWindow = () => {
 }
 
 const createSystemTray = () => {
-    const iconPath = path.join('./assets/icons', "png/tray-icon.png")
+    //specifically label out path to find the image, otherwise tray icon will be blank
+    const iconPath = path.join(__dirname, 'assets', 'icons', 'win', "/icon.ico")
     tray = new Tray(nativeImage.createFromPath(iconPath))
     tray.setToolTip('Click to close')
     tray.on('click', () => {
